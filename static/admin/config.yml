@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: dbeod2/blog
+  branch: main
 
 media_folder: content/image
 public_folder: content
