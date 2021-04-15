@@ -1,0 +1,17 @@
+backend:
+  name: github
+  repo: dbeod2/blog
+
+media_folder: static/assets
+public_folder: assets
+
+collections:
+  - name: blog
+    label: Blog
+    folder: posts
+    create: true
+    fields:
+      - { name: title, label: Title }
+      - { name: date, label: Date, widget: datetime }
+      - { name: author, label: Author, default: "ura", widget: hidden }
+      - { name: hero_image, label: Hero_image, widget: file, default: "/content/images/unnamed.jpg" }
