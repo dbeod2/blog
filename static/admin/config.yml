@@ -2,16 +2,18 @@ backend:
   name: github
   repo: dbeod2/blog
 
-media_folder: static/assets
-public_folder: assets
+media_folder: content/image
+public_folder: content
 
 collections:
-  - name: blog
-    label: Blog
-    folder: posts
+  - name: "posts"
+    label: "Posts"
+    folder: "posts"
     create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
-      - { name: title, label: Title }
-      - { name: date, label: Date, widget: datetime }
-      - { name: author, label: Author, default: "ura", widget: hidden }
-      - { name: hero_image, label: Hero_image, widget: file, default: "/content/images/unnamed.jpg" }
+      - { name: "title", label: "Title" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "author", label: "Author", default: "ura", widget: "hidden" }
+      - { name: "hero_image", label: "Hero_image", widget: "file", default: "/content/images/unnamed.jpg" }
+      - { name: "body", label: "Body", widget: "markdown" }
