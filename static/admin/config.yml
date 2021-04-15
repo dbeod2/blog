@@ -3,7 +3,7 @@ backend:
   repo: dbeod2/blog
   branch: main
 
-media_folder: content/image
+media_folder: content/images
 public_folder: content
 
 collections:
