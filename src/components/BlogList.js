@@ -12,16 +12,17 @@ export default function BlogList() {
         {blogData
           .filter(blog => blog.node.frontmatter.title !== "")
           .map(blog => {
+            console.log('blog.node.frontmatter.hero_image', blog.node.frontmatter.hero_image);
             return (
               <Link to={`/blog/${blog.node.fields.slug}`} key={blog.node.id}>
                 <li className={blogListStyles.li} key={blog.node.fields.slug}>
                   <div className={blogListStyles.list__hero}>
-                    <Img 
+                    {blog.node.frontmatter.hero_image && <Img 
                       fluid={
                         blog.node.frontmatter.hero_image.childImageSharp.fluid
                       }
                       alt={blog.node.frontmatter.title}
-                    />
+                    />}
                   </div>
                   <div className={blogListStyles.list__info}>
                     <h2>{blog.node.frontmatter.title}</h2>
