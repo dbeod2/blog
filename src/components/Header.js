@@ -11,7 +11,9 @@ export default function Header(props) {
     const allMenu = allBlogData.map(blog => {
       return blog.node.frontmatter.category
     })
-    return allMenu;
+    return allMenu.filter((element, index) => {
+      return allMenu.indexOf(element) === index;
+    });
   }
   return (
     <header
