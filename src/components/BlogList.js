@@ -5,12 +5,13 @@ import blogListStyles from "../styles/components/bloglist.module.scss"
 import Img from 'gatsby-image'
 
 export default function BlogList() {
-  const blogData = useBlogData()
+  const blogData = useBlogData();
+  console.log()
   function renderBlogData() {
     return (
       <div>
         {blogData
-          .filter(blog => blog.node.frontmatter.title !== "")
+          .filter(blog => window.location.search.split('=')[1] ? blog.node.frontmatter.category === window.location.search.split('=')[1] : true  )
           .map(blog => {
             console.log('blog.node.frontmatter.hero_image', blog.node.frontmatter.hero_image);
             return (

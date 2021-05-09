@@ -16,5 +16,32 @@ collections:
       - { name: "title", label: "Title" }
       - { name: "date", label: "Date", widget: "datetime" }
       - { name: "author", label: "Author", default: "ura", widget: "hidden" }
+      - { name: "category", label: "Category", widget: "select", options: ["java", "study"]}
+      - { name: "hero_image", label: "Hero_image", widget: "file", default: "/content/images/unnamed.jpg" }
+      - { name: "body", label: "Body", widget: "markdown" }
+
+  - name: "java"
+    label: "java"
+    folder: "content/posts/java"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: "title", label: "Title" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "author", label: "Author", default: "ura", widget: "hidden" }
+      - { name: "category", label: "Category", widget: "hidden", default: "java"}
+      - { name: "hero_image", label: "Hero_image", widget: "file", default: "/content/images/unnamed.jpg" }
+      - { name: "body", label: "Body", widget: "markdown" }
+
+  - name: "study"
+    label: "study"
+    folder: "content/posts/study"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { name: "title", label: "Title" }
+      - { name: "date", label: "Date", widget: "datetime" }
+      - { name: "author", label: "Author", default: "ura", widget: "hidden" }
+      - { name: "category", label: "Category", widget: "hidden", default: "study"}
       - { name: "hero_image", label: "Hero_image", widget: "file", default: "/content/images/unnamed.jpg" }
       - { name: "body", label: "Body", widget: "markdown" }
