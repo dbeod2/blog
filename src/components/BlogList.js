@@ -6,12 +6,19 @@ import Img from 'gatsby-image'
 
 export default function BlogList() {
   const blogData = useBlogData();
+  function getCategory(blog) {
+    try {
+      return window?.location.search.split('=')[1] ? blog.node.frontmatter.category === window?.location.search.split('=')[1] : true
+    } catch(error) {
+      return false;
+    }
+  }
   console.log()
   function renderBlogData() {
     return (
       <div>
         {blogData
-          .filter(blog => global.location.search.split('=')[1] ? blog.node.frontmatter.category === global.location.search.split('=')[1] : true  )
+          .filter(getCategory)
           .map(blog => {
             console.log('blog.node.frontmatter.hero_image', blog.node.frontmatter.hero_image);
             return (
