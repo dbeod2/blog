@@ -11,7 +11,7 @@ export default function BlogList() {
     return (
       <div>
         {blogData
-          .filter(blog => window.location.search.split('=')[1] ? blog.node.frontmatter.category === window.location.search.split('=')[1] : true  )
+          .filter(blog => window && window.location.search.split('=')[1] ? blog.node.frontmatter.category === window.location.search.split('=')[1] : true  )
           .map(blog => {
             console.log('blog.node.frontmatter.hero_image', blog.node.frontmatter.hero_image);
             return (
